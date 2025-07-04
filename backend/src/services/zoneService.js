@@ -1,4 +1,4 @@
-import ZoneModel from "../models/zoneModel.js";
+import ZoneModel from '../models/zoneModel.js';
 class ZoneService {
 
     // méthode de création

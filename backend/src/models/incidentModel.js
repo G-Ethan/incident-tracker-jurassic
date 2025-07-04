@@ -1,8 +1,8 @@
-import sequelize from "./sequelize.js";
-import { DataTypes } from "sequelize";
-import zoneModel from "./zoneModel.js";
+import sequelize from './sequelize.js';
+import { DataTypes } from 'sequelize';
+import zoneModel from './zoneModel.js';
 
-export const Incident = sequelize.define("Incident", {
+export const Incident = sequelize.define('Incident', {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -20,7 +20,7 @@ export const Incident = sequelize.define("Incident", {
             allowNull: false,
             references: {
                 model: zoneModel,
-                key: "id",
+                key: 'id',
             }
         },
         emergencyLevel: {
@@ -34,6 +34,6 @@ export const Incident = sequelize.define("Incident", {
     {
         timestamps: false,
     }
-)
+);
 
 export default Incident;

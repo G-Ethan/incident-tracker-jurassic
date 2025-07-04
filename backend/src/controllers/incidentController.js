@@ -1,4 +1,4 @@
-import IncidentService from '../services/IncidentService.js'
+import IncidentService from '../services/IncidentService.js';
 
 class IncidentController {
     constructor(req, res) {
@@ -29,7 +29,7 @@ class IncidentController {
         try {
             const { id } = this.req.params;
             const incident = await IncidentService.getById(id);
-            if (!incident) return this.res.status(404).json({message: "Incident inéxistant"});
+            if (!incident) return this.res.status(404).json({message: 'Incident inéxistant'});
             return this.res.status(200).json(incident);
         } catch (err) {
             return this.res.status(500).json({message: err.message});
@@ -40,8 +40,8 @@ class IncidentController {
         try {
             const { id } = this.req.params;
             const updateIncident = await IncidentService.update(id, this.req.body);
-            if (!updateIncident) return this.res.status(404).json({message: "Incident inéxistant"});
-            return this.res.status(200).json({message: "Incident modifier avec succès"});
+            if (!updateIncident) return this.res.status(404).json({message: 'Incident inéxistant'});
+            return this.res.status(200).json({message: 'Incident modifier avec succès'});
         } catch (err) {
             return this.res.status(500).json({message: err.message});
         }
@@ -51,8 +51,8 @@ class IncidentController {
         try {
             const { id } = this.req.params;
             const deleteIncident = await IncidentService.delete(id);
-            if (!deleteIncident) return this.res.status(404).json({message: "Incident inéxistant"});
-            return this.res.status(200).json({message: "Incident supprimer avec succès"});
+            if (!deleteIncident) return this.res.status(404).json({message: 'Incident inéxistant'});
+            return this.res.status(200).json({message: 'Incident supprimer avec succès'});
         } catch (err) {
             return this.res.status(500).json({message: err.message});
         }

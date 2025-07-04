@@ -10,7 +10,7 @@ app.use(express.json());
 app.use('/api/incidents', incidentRoutes);
 
 app.use((req, res) => {
-  res.status(404).json({ message: "Route non trouvée" });
+  res.status(404).json({ message: 'Route non trouvée' });
 });
 
 const PORT = process.env.PORT || 3000;

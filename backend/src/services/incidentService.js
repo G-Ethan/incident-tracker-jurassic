@@ -1,5 +1,5 @@
 import Incident from '../models/incidentModel.js';
-import ZoneModel from "../models/zoneModel.js";
+import ZoneModel from '../models/zoneModel.js';
 class IncidentService {
 
     // méthode de création
