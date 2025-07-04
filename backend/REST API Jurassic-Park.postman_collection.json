@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "f7e37741-86e2-4f9f-987d-025a737a845f",
+		"name": "REST API Jurassic-Park",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31421270"
+	},
+	"item": [
+		{
+			"name": "Incident",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Evasion T-Rex\",\r\n    \"description\": \"Un Tyrannosaure s’est échappé de son enclos et se dirige vers la volière\",\r\n    \"type\": \"Evasion\",\r\n    \"Zone\": \"La Vallée des Fossiles\",\r\n    \"emergencyLevel\": \"Elevé\",\r\n    \"status\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/incidents",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Evasion T-Rex\",\r\n    \"description\": \"Un Tyrannosaure s’est échappé de son enclos et se dirige vers la volière\",\r\n    \"type\": \"Evasion\",\r\n    \"Zone\": \"La Vallée des Fossiles\",\r\n    \"emergencyLevel\": \"Elevé\",\r\n    \"status\": true\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/incidents",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"incidents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Evasion T-Rex\",\r\n    \"description\": \"Un Tyrannosaure s’est échappé de son enclos et se dirige vers la volière\",\r\n    \"type\": \"Evasion\",\r\n    \"Zone\": \"La Vallée des Fossiles\",\r\n    \"emergencyLevel\": \"Elevé\",\r\n    \"status\": true\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/incidents/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"incidents",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste par type",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Liste par urgence",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Liste par zone",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Modif",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/incidents/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"incidents",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Evasion T-Rex\",\r\n    \"description\": \"Un Tyrannosaure s’est échappé de son enclos et se dirige vers la volière\",\r\n    \"type\": \"Evasion\",\r\n    \"Zone\": \"La Vallée des Fossiles\",\r\n    \"emergencyLevel\": \"Elevé\",\r\n    \"status\": true\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/incidents/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"incidents",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "zone",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/zones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"zones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Liste by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/zones/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"zones",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modif",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/zones/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"zones",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\"\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/zones/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"zones",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

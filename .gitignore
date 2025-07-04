@@ -1,0 +1,21 @@
+# Node
+node_modules/
+.env
+.env.local
+npm-debug.log
+logs/
+
+# Docker
+*.tar
+*.pid
+
+# Tests
+coverage/
+*.test.js
+
+# Divers
+.DS_Store
+
+# .gitignore
+dist/
+node_modules/

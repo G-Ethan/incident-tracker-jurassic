@@ -1,0 +1,33 @@
+# Dépendances Node.js
+node_modules/
+
+# Logs et débogage
+logs/
+*.log
+npm-debug.log*
+
+# Tests et coverage
+coverage/
+*.lcov
+
+# Variables d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Système
+.DS_Store
+
+# IDE et éditeurs
+.vscode/
+.idea/
+
+# Build (si tu build un dist ou un out)
+dist/
+build/
+
+# Temp
+*.tmp
+*.temp
