@@ -1,0 +1,45 @@
+.form-base {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-base input {
+    width: 350px;
+    height: 30px;
+}
+
+.form-base textarea {
+    width: 350px;
+    height: 100px;
+}
+
+.form-base select {
+    width: 350px;
+    height: 30px;
+}
+.form-base button {
+    border: solid 2px red;
+    border-radius: 7px;
+    color: red;
+    padding: 10px 5px;
+}
+
+.form-base button:hover {
+    color: white;
+    background-color: red;
+}
+
+.div-container-form {
+    margin: 3% 37%;
+    padding: 30px;
+    border: solid 2px red;
+    border-radius: 7px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.div-checkbox-label label {
+    display: flex;
+    justify-content: center;
+}

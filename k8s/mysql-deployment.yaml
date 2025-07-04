@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: incident-mysql
+  labels:
+    app: incident-mysql
+spec:
+  selector:
+    matchLabels:
+      app: incident-mysql
+  template:
+    metadata:
+      labels:
+        app: incident-mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:8
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: incident-mysql-secret
+              key: password
+        volumeMounts:
+        - name: incident-mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: incident-mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: incident-mysql-pvc

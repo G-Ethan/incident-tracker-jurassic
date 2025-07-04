@@ -1,0 +1,20 @@
+services:
+  database:
+    image: mysql:8.0
+    container_name: Jurassic-park-db
+    env_file:
+      - .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  pma:
+    image: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+
+volumes:
+  db_data:

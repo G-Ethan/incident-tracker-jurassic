@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<link rel="icon" href="image/logo_jurassic.png" type="image/png">
+<link rel="stylesheet" href="style/header.css">
+<link rel="stylesheet" href="style/index.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurassic Park</title>
+</head>
+<body>
+    <header>
+        <img src="image/logo_jurassic.png" alt="logo">
+        <h1 class="slogan">La vie trouve toujours un chemin</h1>
+        <div class="btn-nav">
+            <a href="newIncident.html" class="btn-incident">Ajout d'Incident</a>
+            <a href="updateIncident.html" class="btn-incident">Gestion d'Incident</a>
+        </div>
+    </header>
+    <h1 class="title">Incident</h1>
+    <div id="filters">
+        <label>
+            Type :
+            <select id="filter-type">
+                <option value="">Aucun</option>
+                <option value="Panne">Panne</option>
+                <option value="Accident">Accident</option>
+                <option value="Dinosaure">Dinosaure</option>
+                <option value="Evasion">Evasion</option>
+                <option value="Visiteur">Visiteur</option>
+            </select>
+        </label>
+        <label>
+            Urgence :
+            <select id="filter-urgence">
+                <option value="">Aucun</option>
+                <option value="Faible">Faible</option>
+                <option value="Moyenne">Moyenne</option>
+                <option value="élevé">Elevé</option>
+            </select>
+        </label>
+        <label>
+            Zone :
+            <select id="filter-zone">
+<!--                rempli dynamiquement par la fonction populateZoneFilter() dans le fichier filter.js-->
+            </select>
+        </label>
+    </div>
+    <div id="incidents-list" class="cards-container">
+<!--        rempliisage dynamique-->
+    </div>
+    <div class="div-incident-resolu">
+        <h1>Résolu</h1>
+    </div>
+    <div id="incidents-list-resolu" class="cards-container">
+        <!--        rempliisage dynamique-->
+    </div>
+    <script src="js/displayIncident.js"></script>
+    <script src="js/filter.js"></script>
+</body>
+</html>

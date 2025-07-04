@@ -1,0 +1,80 @@
+name: CI/CD - Incident Tracker
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    env:
+      REGISTRY: ghcr.io/g-ethan
+      IMAGE_BACKEND: incident-backend
+      IMAGE_FRONTEND: incident-frontend
+
+    steps:
+    # Vérif du code
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    # install/setup Node.js
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    #  Install deps & lint
+    - name: Install backend deps
+      working-directory: backend
+      run: npm ci
+
+    - name: Lint backend (optionnel)
+      working-directory: backend
+      run: npx eslint .
+
+    #  tests
+    - name: Run backend tests
+      working-directory: backend
+      run: npm test
+
+    # Build Docker images
+    - name: Build backend Docker image
+      run: |
+        docker build -t $REGISTRY/$IMAGE_BACKEND:latest \
+          -f docker/backend/Dockerfile .
+
+    - name: Build frontend Docker image
+      run: |
+        docker build -t $REGISTRY/$IMAGE_FRONTEND:latest \
+          -f docker/frontend/Dockerfile frontend/
+
+
+
+    #  Scan de sécurité (Trivy)
+    - name: Scan backend image
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_BACKEND }}:latest
+
+    - name: Scan frontend image
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_FRONTEND }}:latest
+
+    # Connexion Git Hub
+    - name: Log in to GHCR
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    #  Push les images
+    - name: Push backend image
+      run: docker push $REGISTRY/$IMAGE_BACKEND:latest
+
+    - name: Push frontend image
+      run: docker push $REGISTRY/$IMAGE_FRONTEND:latest

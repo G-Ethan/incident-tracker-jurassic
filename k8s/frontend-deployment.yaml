@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: incident-frontend
+  labels:
+    app: incident-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: incident-frontend
+  template:
+    metadata:
+      labels:
+        app: incident-frontend
+    spec:
+      containers:
+      - name: incident-frontend
+        image: <ton-registry>/incident-frontend:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
