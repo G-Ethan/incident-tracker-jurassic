@@ -1,0 +1,19 @@
+# Évite d'envoyer le dossier des dépendances locales
+node_modules
+
+# Évite les logs locaux
+*.log
+logs
+
+# Évite les fichiers de config perso
+.env
+.env.local
+
+# Évite les tests si pas nécessaires dans l'image finale
+tests
+coverage
+
+# Évite les fichiers OS et IDE
+.DS_Store
+.vscode
+.idea
