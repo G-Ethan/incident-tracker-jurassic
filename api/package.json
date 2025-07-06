@@ -25,13 +25,16 @@
     "url": "https://github.com/mathiscapart/travel-paradise-api/issues"
   },
   "homepage": "https://github.com/mathiscapart/travel-paradise-api#readme",
+
   "devDependencies": {
     "chai": "^5.2.0",
+    "eslint": "^8.56.0",
     "jest": "^30.0.4",
     "mocha": "^11.1.0",
     "nodemon": "^3.1.10",
     "supertest": "^7.1.1"
   },
+  
   "dependencies": {
     "@sequelize/mariadb": "^7.0.0-alpha.46",
     "bcrypt": "^6.0.0",
