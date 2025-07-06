@@ -9,6 +9,6 @@ export const Zone = sequelize.define("Zone", {
 {
     timestamps: false,
     }
-)
+);
 
 export default Zone;

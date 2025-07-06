@@ -1,5 +1,5 @@
-import express from 'express';
-import IncidentController from '../controllers/incidentController.js';
+import express from "express";
+import IncidentController from "../controllers/incidentController.js";
 
 /**
  * @swagger
@@ -28,7 +28,7 @@ const router = express.Router();
  */
 
 // route pour la liste des incidents
-router.get('/', (req, res) => new IncidentController(req, res).getAllIncident())
+router.get("/", (req, res) => new IncidentController(req, res).getAllIncident());
 
 /**
  * @swagger
@@ -51,7 +51,7 @@ router.get('/', (req, res) => new IncidentController(req, res).getAllIncident())
  *               $ref: '#/components/schemas/Incident'
  */
 // route pour la liste d'un incident
-router.get('/:id', (req, res) => new IncidentController(req, res).getIncidentById())
+router.get("/:id", (req, res) => new IncidentController(req, res).getIncidentById());
 
 /**
  * @swagger
@@ -74,7 +74,7 @@ router.get('/:id', (req, res) => new IncidentController(req, res).getIncidentByI
  *               $ref: '#/components/schemas/Incidents'
  */
 // route pour la création d'incident
-router.post('/', (req, res) => new IncidentController(req, res).createIncident())
+router.post("/", (req, res) => new IncidentController(req, res).createIncident());
 
 /**
  * @swagger
@@ -104,7 +104,7 @@ router.post('/', (req, res) => new IncidentController(req, res).createIncident()
  */
 
 // route pour la modification d'incident
-router.patch('/:id', (req, res) => new IncidentController(req, res).updateIncident())
+router.patch("/:id", (req, res) => new IncidentController(req, res).updateIncident());
 
 /**
  * @swagger
@@ -128,7 +128,7 @@ router.patch('/:id', (req, res) => new IncidentController(req, res).updateIncide
  */
 
 // route pour la suppresion d'incidents
-router.delete('/:id', (req, res) => new IncidentController(req, res).deleteIncident())
+router.delete("/:id", (req, res) => new IncidentController(req, res).deleteIncident());
 
 /**
  * @swagger
@@ -154,7 +154,7 @@ router.delete('/:id', (req, res) => new IncidentController(req, res).deleteIncid
  */
 
 // route pour la liste des incidents par zone
-router.get('/zone/:zoneId', (req, res) => new IncidentController(req, res).getIncidentByZone())
+router.get("/zone/:zoneId", (req, res) => new IncidentController(req, res).getIncidentByZone());
 
 /**
  * @swagger
@@ -180,7 +180,7 @@ router.get('/zone/:zoneId', (req, res) => new IncidentController(req, res).getIn
  */
 
 // route pour la liste des incidents par type
-router.get('/type/:type', (req, res) => new IncidentController(req, res).getIncidentByType())
+router.get("/type/:type", (req, res) => new IncidentController(req, res).getIncidentByType());
 
 /**
  * @swagger
@@ -206,7 +206,7 @@ router.get('/type/:type', (req, res) => new IncidentController(req, res).getInci
  */
 
 // route pour la liste des incidents par urgence
-router.get('/emergencyLevel/:emergencyLevel', (req, res) => new IncidentController(req, res).getIncidentByUrgency())
+router.get("/emergencyLevel/:emergencyLevel", (req, res) => new IncidentController(req, res).getIncidentByUrgency());
 
 export default router;
 

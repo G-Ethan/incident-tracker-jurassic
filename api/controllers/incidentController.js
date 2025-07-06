@@ -1,4 +1,4 @@
-import IncidentService from '../services/IncidentService.js'
+import IncidentService from "../services/IncidentService.js";
 
 class IncidentController {
     constructor(req, res) {

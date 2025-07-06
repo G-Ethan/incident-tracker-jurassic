@@ -34,6 +34,6 @@ export const Incident = sequelize.define("Incident", {
     {
         timestamps: false,
     }
-)
+);
 
 export default Incident;

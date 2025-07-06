@@ -1,4 +1,4 @@
-import Incident from '../models/incidentModel.js';
+import Incident from "../models/incidentModel.js";
 import ZoneModel from "../models/zoneModel.js";
 class IncidentService {
 
@@ -18,7 +18,7 @@ class IncidentService {
         return await Incident.findByPk(id, {
             include: [{
                 model: ZoneModel,
-                attributes: ['id', 'name']
+                attributes: ["id", "name"]
             }]
         });
     }
