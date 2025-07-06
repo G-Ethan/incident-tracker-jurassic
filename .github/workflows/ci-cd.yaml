@@ -70,10 +70,12 @@ jobs:
     - name: Build & push frontend image
       uses: docker/build-push-action@v5
       with:
-        context: ./docker/frontend
+        context: .
+        file: ./docker/frontend/Dockerfile
         push: true
         tags: |
           ${{ secrets.DOCKER_USERNAME }}/incident-frontend:latest
           ${{ secrets.DOCKER_USERNAME }}/incident-frontend:${{ github.sha }}
+
 
 
