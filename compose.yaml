@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  # ---------------------
+  backend:
+    build:
+      context: ./docker/backend
+    container_name: incident-backend
+    env_file:
+      - ./api/.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+    networks:
+      - incident-net
+
+  # ---------------------
+  frontend:
+    build:
+      context: ./docker/frontend
+    container_name: incident-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - incident-net
+
+  # ---------------------
+  mysql:
+    image: mysql:8
+    container_name: incident-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword123
+      MYSQL_DATABASE: incidentdb
+      MYSQL_USER: incident_user
+      MYSQL_PASSWORD: incident_pwd
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - incident-net
+# ---------------------
+volumes:
+  mysql_data:
+
+# ---------------------
+networks:
+  incident-net:
