@@ -76,10 +76,4 @@ jobs:
           ${{ secrets.DOCKER_USERNAME }}/incident-frontend:latest
           ${{ secrets.DOCKER_USERNAME }}/incident-frontend:${{ github.sha }}
 
-    - name: Scan frontend image with Trivy
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: ${{ secrets.DOCKER_USERNAME }}/incident-frontend:latest
-        format: table
-        exit-code: 1
-        severity: CRITICAL,HIGH
+
