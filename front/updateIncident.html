@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<link rel="icon" href="image/logo_jurassic.png" type="image/png">
+<link rel="stylesheet" href="style/header.css">
+<link rel="stylesheet" href="style/index.css">
+<link rel="stylesheet" href="style/updateIncident.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Jurassic Park</title>
+</head>
+<body>
+<header>
+    <img src="image/logo_jurassic.png" alt="logo">
+    <h1 class="slogan">La vie trouve toujours un chemin</h1>
+    <div class="btn-nav">
+        <a href="index.html" class="btn-incident">Accueil</a>
+    </div>
+</header>
+<h1 class="title">Status des incidents</h1>
+<div class="div-container-form">
+    <form id="incident-edit-form" class="form-base">
+        <input type="number" id="incident-id" placeholder="ID" required/>
+        <input type="text" id="title" placeholder="Titre"/>
+        <textarea id="description" placeholder="Description"></textarea>
+        <select id="type">
+            <option value="">-- Type --</option>
+            <option value="Panne">Panne</option>
+            <option value="Accident">Accident</option>
+            <option value="Dinosaure">Dinosaure</option>
+            <option value="Evasion">Evasion</option>
+            <option value="Visiteur">Visiteur</option>
+        </select>
+        <select id="emergencyLevel">
+            <option value="">-- Urgence --</option>
+            <option value="élevé">Elevé</option>
+            <option value="moyenne">Moyenne</option>
+            <option value="faible">Faible</option>
+        </select>
+        <select id="zone">
+
+        </select>
+        <div class="div-checkbox-label">
+            <label>Résolu</Label>
+            <input type="checkbox" id="status"/>
+        </div>
+        <div class="btn-incident-gestion">
+            <button id="btn-update" type="submit">Modifier l'incident</button>
+            <button id="btn-delete" type="submit">Supprimer l'incident</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/updateIncident.js"></script>
+</body>
+</html>
+
+
